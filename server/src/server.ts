@@ -4,7 +4,7 @@ const port = 8081;
 
 const app = express();
 
-app.get('/hello', (req, res) => {
+app.get('/hello', (req: any, res: any) => {
   res.send({data: 'Hello from server'})
 })
 
