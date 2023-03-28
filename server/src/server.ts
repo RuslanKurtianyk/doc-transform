@@ -1,14 +1,14 @@
-const express = require('express');
+import { app } from './app';
 
-const port = 8081;
+const port = app.get('port');
 
-const app = express();
+const server = app.listen(port, onListening);
 
-app.get('/hello', (req: any, res: any) => {
-  res.send({data: 'Hello from server'})
-})
+function onListening() {
+  const addr = server.address();
+  const bind =
+      typeof addr === "string" ? `pipe ${addr}` : `port ${addr.port}`;
+  console.log(`Listening on ${bind}`);
+}
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
-
+export default server;
