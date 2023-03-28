@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 function App() {
 
   useEffect(()=> {
-    fetch('/hello')
+    fetch('http://localhost:8081/hello')
       .then((res) => res.json())
       .then(console.log)
   }, [])

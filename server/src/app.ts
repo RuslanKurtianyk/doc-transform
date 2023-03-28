@@ -1,6 +1,5 @@
 import express from 'express';
-import * as path from 'path';
-
+const cors = require('cors');
 // Routes
 import { index } from './routes/index';
 
@@ -9,5 +8,7 @@ export const app = express();
 
 // Express configuration
 app.set('port', process.env.PORT || 8081);
+
+app.use(cors());
 
 app.use('', index);
