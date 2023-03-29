@@ -1,6 +1,7 @@
 import { Router } from 'express';
-import * as controller from '../controllers/index';
+import * as controllers from '../controllers/index';
 
 export const index = Router();
 
-index.get('/hello', controller.index);
+index.get('/hello', controllers.hello);
+index.post('/upload', controllers.upload);
